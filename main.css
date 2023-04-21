@@ -27,7 +27,16 @@ main {
     padding: 0 calc(16px + 8 * (100% - 320px) / 400);
 }
 
-header {
+button {
+    font-family: 'TT Lakes';
+
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     padding: calc(16px + 8 * (100% - 320px) / 400);
@@ -36,6 +45,8 @@ header {
 .menu {
     display: flex;
     align-items: center;
+    min-width: 155px;
+    justify-content: space-between;
 }
 
 .buttons {
@@ -48,7 +59,7 @@ header {
         display: none;
     }
 
-    header {
+    .header {
         float: right;
     }
 
@@ -57,38 +68,29 @@ header {
     }
 }
 
-.but-menu {
-    height: 40px;
-    width: 40px;
-    background-color: #FF3E79 !important;
-    border-width: 0;
-    border-radius: 100%;
-    margin-right: 16px;
-}
-
 .menu__button {
-    background: url('img/menu.svg') no-repeat 11px 11px;
     height: 40px;
     width: 40px;
-    margin-right: 40px;
+    padding: 0;
 }
 
-.menu__button::after {
-	content: "";
-	display: inline-block;
-    height: 40px;
-    border-left: 2px solid #EAEAEA;
-    margin-left: 60px;
-}
+@media (min-width: 767px) and (max-width: 1119px) {
 
-@media (max-width: 767px),
-(min-width: 1119px) {
-	.menu__button {
-		margin-right: 16px;
-	}
+    .menu {
+        min-width: 180px;
+    }
+
+    .menu__button {
+        display: flex;
+        width: 60px;
+        justify-content: space-between;
+    }
 
     .menu__button::after {
-        display: none;
+        content: "";
+        display: inline-block;
+        height: 40px;
+        border-left: 2px solid #EAEAEA;
     }
 }
 
@@ -99,21 +101,9 @@ header {
 @media (min-width: 768px) and (max-width: 1119px) {
     .large-menu {
         display: flex;
+        gap: 16px;
         height: 40px;
-        min-width: 160px;
-    }
-
-    .large-menu__call {
-        background: url('img/call.svg') no-repeat 11px 10px;
-    }
-
-    .large-menu__chat {
-        background: url('img/chat.svg') no-repeat 11px 10px;
-    }
-
-    .large-menu__profile {
-        background: url('img/profile.svg') no-repeat 10px 10px;
-        margin-right: 0;
+        min-width: 170px;
     }
 }
 
@@ -121,45 +111,34 @@ header {
     display: flex;
     height: 40px;
     min-width: 90px;
+    align-items: center;
+    gap: 16px;
 }
 
 .m-buttons::before {
-	content: "";
+    content: "";
     height: 40px;
     border-left: 2px solid #EAEAEA;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 4px;
+}
+
+.m-buttons__label {
+	display: none;
 }
 
 @media (min-width: 1119px) {
     .m-buttons::before {
         display: none;
-    }
 }
 
-.m-buttons__request {
-    background: url('img/request.svg') no-repeat 10px 9px;
+.m-buttons__button {
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
-.m-buttons__status {
-    background: url('img/status.svg') no-repeat 12px 9px;
-    margin-right: 0;
-}
-
-.request-label {
-    display: none;
-}
-
-.status-label {
-    display: none;
-}
-
-@media (min-width: 1120px) {
-
-    .request-label,
-    .status-label {
-        display: block;
-        margin: auto 8px;
+    .m-buttons__label {
+    	    	display: inline;
         font-size: 16px;
         line-height: 24px;
     }
@@ -180,11 +159,11 @@ header {
 }
 
 .page-header__title::before {
-	content: "";
+    content: "";
     height: 40px;
     border-left: 4px solid #41F6D7;
     position: absolute;
-    left: 0;	
+    left: 0;
 }
 
 .page-nav {
@@ -233,12 +212,10 @@ header {
     margin-right: 8px;
 }
 
-.button {
+.b-main__button {
     padding-left: 8px;
     height: 24px;
     font-size: 16px;
-    background: none;
-    border: none;
 }
 
 .post__b-main {
