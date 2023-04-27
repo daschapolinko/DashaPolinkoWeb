@@ -29,7 +29,6 @@ main {
 
 button {
     font-family: 'TT Lakes';
-
     background: none;
     border: none;
     padding: 0;
@@ -123,22 +122,22 @@ button {
 }
 
 .m-buttons__label {
-	display: none;
+    display: none;
 }
 
 @media (min-width: 1119px) {
     .m-buttons::before {
         display: none;
-}
+    }
 
-.m-buttons__button {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-}
+    .m-buttons__button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
 
     .m-buttons__label {
-    	    	display: inline;
+        display: inline;
         font-size: 16px;
         line-height: 24px;
     }
