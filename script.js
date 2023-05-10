@@ -37,7 +37,6 @@ function findGaleryWidth() {
     }
     servicesCount = Math.floor(galeryWidth / 234) * 2;
     createGalery();
-    console.log(galeryWidth, servicesCount);
 }
 
 function addService(source) {
@@ -76,8 +75,10 @@ function createGalery() {
         }
         sliders = new Swiper('.swiper', {
             direction: 'horizontal',
-            spaceBetween: 16,
-            centeredSlides: true,
+            spaceBetween: 240,
+            slidesPerView: 2,
+            initialSlide: 0,
+            watchOverflow: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
