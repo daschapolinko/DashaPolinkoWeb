@@ -9,6 +9,15 @@
 
 @font-face {
     font-family: 'TT Lakes';
+    src: url('font/TTLakes-Medium.eot');
+    src: local('TT Lakes Medium'), local('TTLakes-Medium'), url('font/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/TTLakes-Medium.woff') format('font/woff'),
+        url('font/TTLakes-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'TT Lakes';
     src: url('font/TTLakes-Bold.eot');
     src: local('TT Lakes Bold'), local('TTLakes-Bold'), url('font/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
         url('font/TTLakes-Bold.woff') format('font/woff'),
@@ -24,6 +33,8 @@ body {
 
 main {
     background: #F8F8F8;
+    font-weight: normal;
+    color: #1b1c21;
     padding: 0 calc(16px + 8 * (100% - 320px) / 400);
 }
 
@@ -33,6 +44,26 @@ button {
     border: none;
     padding: 0;
     margin: 0;
+}
+
+.button {
+    height: 24px;
+    font-size: 16px;
+	letter-spacing: -0.2px;
+	font-style: normal;
+	font-weight: 500;
+}
+
+.button::before {
+    content: url('img/button.svg');
+    margin-right: 8px;
+}
+
+.reverse-button::before {
+    content: url('img/button.svg');
+    display: inline-block;
+    margin-right: 8px;
+	transform: rotate(180deg);
 }
 
 .header {
@@ -206,15 +237,8 @@ button {
     justify-content: space-between
 }
 
-.b-main__button::before {
-    content: url('img/button.svg');
-    margin-right: 8px;
-}
-
 .b-main__button {
     padding-left: 8px;
-    height: 24px;
-    font-size: 16px;
 }
 
 .post__b-main {
@@ -273,4 +297,76 @@ button {
     .post__aside {
         min-width: calc(50% - calc(16px + 8 * (100% - 320px) / 400));
     }
+}
+
+/*services*/
+
+.services {
+	padding-bottom: 34px;
+}
+
+.services__title {
+    font-weight: normal;
+	color: #7e7e82;
+	font-size: 16px;
+	letter-spacing: -0.2px;
+	text-transform: uppercase;
+	background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);
+	padding: 16px 24px;
+}
+
+.services__galery-container {}
+
+.services__galery {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 16px;
+	padding: 24px 0;
+}
+
+.services__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	border: 1px solid #EAEAEA;
+	border-radius: 6px;
+	width: 224px;
+	height: 72px;
+	box-sizing: border-box;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.services__logo {
+	max-width: 128px;
+}
+
+.services__button {}
+
+.swiper {
+	height: 154px;
+}
+
+.swiper-wrapper {
+	align-items: center;
+}
+
+.swiper-wrapper .services__item {
+	width: 240px;
+	height: 72px;
+}
+
+.swiper-pagination {
+  top: 80px !important;
+  height: 12px;
+}
+
+.hidden-element {
+	display: none !important;
+}
+
+.invisible-element {
+	visibility: hidden;
 }
